@@ -1,93 +1,22 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang='en'>
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Fall Line Putting League</title>
-<link rel="stylesheet" href="style.css">
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>Putting League</title>
+<link rel='stylesheet' href='style.css'>
 </head>
 <body>
-  <div id="splash" class="overlay">
-    <div class="splash-inner">
-      <img src="assets/fall-line.png" alt="Fall Line" class="splash-logo">
-      <img src="assets/macon-aces.png" alt="Macon Aces" class="splash-logo">
-      <h2>Welcome — Fall Line Putting League</h2>
-      <p class="small">Swiss rounds → Cut → Single Elimination</p>
-      <button id="splashProceed" class="btn primary">Start</button>
-    </div>
-  </div>
-
-  <header class="site-header">
-    <img src="assets/fall-line.png" alt="Fall Line" class="brand-logo left">
-    <h1>Fall Line Putting League</h1>
-    <div class="right-controls">
-      <button id="clearCacheBtn" class="btn clear">Clear Cache</button>
-    </div>
-    <img src="assets/macon-aces.png" alt="Macon Aces" class="brand-logo right">
-  </header>
-
-  <main class="container">
-    <aside class="left card" id="leftPanel">
-      <h3>Player Pool & Settings</h3>
-      <textarea id="playerPool" placeholder="One player per line"></textarea>
-      <div class="controls">
-        <label>Team size <select id="teamSize"><option value="2" selected>2</option><option value="1">1</option></select></label>
-        <label>Swiss rounds <input id="swissRounds" type="number" min="1" placeholder="auto"></label>
-      </div>
-      <div class="buttons">
-        <button id="randomizeBtn" class="btn primary">Randomize Teams</button>
-        <button id="lockBtn" class="btn ghost">Lock Teams</button>
-      </div>
-      <div id="teamsList" class="teams card small"><em>No teams yet</em></div>
-      <div id="lockedNote" class="small" style="display:none">Teams locked — player pool hidden.</div>
-    </aside>
-
-    <section class="main card">
-      <div class="round-header">
-        <strong id="roundLabel">Swiss Round 0</strong>
-        <div>Locked: <strong id="lockedFlag">No</strong></div>
-      </div>
-
-      <section class="card matches-area">
-        <h3>Current Swiss Matches</h3>
-        <div id="swissGrid" class="swiss-grid"></div>
-        <div class="match-controls">
-          <button id="submitSwiss" class="btn primary">Submit Swiss Round Results</button>
-          <button id="nextSwiss" class="btn ghost">Force Next Round</button>
-          <div id="statusText" class="small">Enter final scores and click Submit.</div>
-        </div>
-      </section>
-
-      <section id="standingsCard" class="card standings-card" aria-hidden="true">
-        <h3>Standings</h3>
-        <div id="standingsGrid" class="standings-grid"></div>
-      </section>
-
-      <section id="cutCard" class="card" style="display:none">
-        <h3>Cut to Single Elimination</h3>
-        <div class="small">Cut size: <span id="cutSize"></span></div>
-        <button id="makeCut" class="btn primary">Make Cut & Generate Bracket</button>
-      </section>
-
-      <section id="bracketCard" class="card" style="display:none">
-        <h3>Single-Elimination Bracket</h3>
-        <div id="bracketArea"></div>
-      </section>
-    </section>
-  </main>
-
-  <div id="pauseOverlay" class="overlay hidden">
-    <div class="pause-inner">
-      <div id="pauseMessage">Paused</div>
-      <button id="pauseProceed" class="btn primary">Proceed</button>
-    </div>
-  </div>
-
-<footer class="site-footer">
-  <div><img src="assets/fall-line.png" class="mini"> Fall Line × Macon Aces</div>
-  <div class="small">Offline — local browser data</div>
-</footer>
-
-<script src="script.js"></script>
+<header>
+  <img src='assets/fall_line_logo.png' class='logo left' alt='Fall Line'>
+  <img src='assets/putting_league_logo.png' class='logo right' alt='Putting League'>
+</header>
+<main>
+  <button id='randomizeTeams'>Randomize Teams</button>
+  <div id='teams'></div>
+  <button id='submitScores'>Submit Scores</button>
+  <div id='standings' class='hidden'></div>
+</main>
+<script src='script.js'></script>
 </body>
 </html>

@@ -1,52 +1,17 @@
-
-:root{--amber:#c86b2b;--green:#4aa04a;--wood:#4b2e1c;--muted:#6b6b6b}
-*{box-sizing:border-box} body,html{height:100%;margin:0;font-family:Inter,system-ui,Arial;background:#efe6d8;color:#2e1a09}
-body{background-image:url('assets/background.png');background-repeat:repeat;background-size:220px;background-attachment:fixed}
-.site-header{display:flex;align-items:center;justify-content:center;gap:12px;padding:12px;background:linear-gradient(90deg,var(--wood),#6b3f24);color:#fff;position:relative}
-.brand-logo{height:56px;object-fit:contain}
-.brand-logo.left{position:absolute;left:18px;top:10px;height:64px}
-.brand-logo.right{position:absolute;right:18px;top:10px;height:64px}
-.right-controls{position:absolute;right:18px;top:78px}
-.container{display:flex;gap:16px;max-width:1200px;margin:18px auto;padding:0 12px;align-items:flex-start}
-.left{width:360px;flex:0 0 360px}
-.main{flex:1}
-.card{background:rgba(255,255,255,0.98);padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,0.06);margin-bottom:14px;box-shadow:0 8px 18px rgba(0,0,0,0.06)}
-textarea{width:100%;min-height:140px;padding:10px;border-radius:8px;border:1px solid #e5d9cf;font-size:14px}
-.controls{display:flex;gap:8px;margin-top:10px;align-items:center}
-.buttons{display:flex;gap:8px;margin-top:10px}
-.btn{padding:8px 12px;border-radius:8px;border:0;cursor:pointer;font-weight:700}
-.primary{background:var(--amber);color:#fff}
-.ghost{background:transparent;border:1px solid #e5d9cf;color:var(--wood)}
-.small{font-size:13px;color:var(--muted)}
-
-/* Swiss grid */
-.matches-area .swiss-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:12px}
-@media (max-width:1100px){.matches-area .swiss-grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:700px){.matches-area .swiss-grid{grid-template-columns:1fr} .left{display:none} .container{padding:12px}}
-
-.match-card{background:linear-gradient(180deg,#fff,#fbf7f3);padding:12px;border-radius:10px;border:1px solid #efe0d1;display:flex;flex-direction:column;gap:8px}
-.match-teams{font-weight:800}
-.match-players{font-size:13px;color:var(--muted)}
-.match-scores{display:flex;gap:8px;align-items:center}
-.match-scores input{width:64px;padding:6px;border-radius:6px;border:1px solid #ddd;text-align:center}
-
-/* standings */
-.standings-card{overflow:hidden;transition:all 0.6s ease;opacity:0;transform:translateY(12px);max-height:0;padding:0}
-.standings-card.show{opacity:1;transform:translateY(0);max-height:2000px;padding:12px}
-.standings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-@media (max-width:1100px){.standings-grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:700px){.standings-grid{grid-template-columns:1fr}}
-
-/* pause overlay */
-.overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.35);z-index:1000}
-.overlay.hidden{display:none}
-.splash-inner{background:rgba(255,255,255,0.98);padding:28px;border-radius:10px;text-align:center;box-shadow:0 12px 30px rgba(0,0,0,0.25)}
-.splash-logo{max-width:220px;margin:6px}
-.pause-inner{background:rgba(255,255,255,0.98);padding:20px;border-radius:10px;text-align:center;box-shadow:0 12px 30px rgba(0,0,0,0.2)}
-
-/* footer */
-.site-footer{max-width:1200px;margin:0 auto;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:13px}
-.mini{height:28px}
-
-/* responsive tweaks */
-@media (max-width:500px){ .splash-logo{max-width:140px} .brand-logo.left,.brand-logo.right{display:none} }
+body {
+  font-family: Poppins, sans-serif;
+  background: url('assets/background_tile.png') repeat;
+  background-size: 300px;
+  margin: 0;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.logo { height: 80px; }
+#teams, #standings { display: grid; gap: 1rem; padding: 1rem; }
+@media (min-width: 1024px) { #teams { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 768px) and (max-width: 1023px) { #teams { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 767px) { #teams { grid-template-columns: 1fr; } }
+.hidden { display: none; }
